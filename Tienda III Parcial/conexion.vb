@@ -56,4 +56,25 @@ Public Class conexion
             MsgBox(ex.Message)
         End Try
     End Function
+
+    'Cambiar el estado del usuario no lo elimina
+    Public Function eliminarUsuario(idUsuario As Integer, rol As String)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("eliminarUsuario", conexion)
+            cmb.CommandType = CommandType.StoredProcedure 'tambien podemos poner 4
+            cmb.Parameters.AddWithValue("@idUsuario", idUsuario)
+            cmb.Parameters.AddWithValue("@rol", rol)
+            If cmb.ExecuteNonQuery <> 0 Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally 'El finally cierra la conexion
+            conexion.Close()
+        End Try
+    End Function
 End Class

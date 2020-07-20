@@ -38,6 +38,7 @@ Partial Class frmUsuario
         Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.btnEliminar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -58,9 +59,9 @@ Partial Class frmUsuario
         Me.GroupBox1.Controls.Add(Me.txtCodigo)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(41, 46)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(389, 268)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
@@ -71,7 +72,7 @@ Partial Class frmUsuario
         Me.cmbRol.FormattingEnabled = True
         Me.cmbRol.Items.AddRange(New Object() {"Gerente", "Desarrollador"})
         Me.cmbRol.Location = New System.Drawing.Point(129, 192)
-        Me.cmbRol.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbRol.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbRol.Name = "cmbRol"
         Me.cmbRol.Size = New System.Drawing.Size(205, 24)
         Me.cmbRol.TabIndex = 13
@@ -89,7 +90,7 @@ Partial Class frmUsuario
         'txtCorreo
         '
         Me.txtCorreo.Location = New System.Drawing.Point(129, 223)
-        Me.txtCorreo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCorreo.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCorreo.Name = "txtCorreo"
         Me.txtCorreo.Size = New System.Drawing.Size(205, 22)
         Me.txtCorreo.TabIndex = 11
@@ -107,7 +108,7 @@ Partial Class frmUsuario
         'txtPsw
         '
         Me.txtPsw.Location = New System.Drawing.Point(129, 156)
-        Me.txtPsw.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtPsw.Margin = New System.Windows.Forms.Padding(4)
         Me.txtPsw.Name = "txtPsw"
         Me.txtPsw.Size = New System.Drawing.Size(205, 22)
         Me.txtPsw.TabIndex = 9
@@ -125,7 +126,7 @@ Partial Class frmUsuario
         'txtUserName
         '
         Me.txtUserName.Location = New System.Drawing.Point(129, 124)
-        Me.txtUserName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtUserName.Margin = New System.Windows.Forms.Padding(4)
         Me.txtUserName.Name = "txtUserName"
         Me.txtUserName.Size = New System.Drawing.Size(205, 22)
         Me.txtUserName.TabIndex = 7
@@ -143,7 +144,7 @@ Partial Class frmUsuario
         'txtApellido
         '
         Me.txtApellido.Location = New System.Drawing.Point(129, 92)
-        Me.txtApellido.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtApellido.Margin = New System.Windows.Forms.Padding(4)
         Me.txtApellido.Name = "txtApellido"
         Me.txtApellido.Size = New System.Drawing.Size(205, 22)
         Me.txtApellido.TabIndex = 5
@@ -161,7 +162,7 @@ Partial Class frmUsuario
         'txtNombre
         '
         Me.txtNombre.Location = New System.Drawing.Point(129, 60)
-        Me.txtNombre.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtNombre.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(205, 22)
         Me.txtNombre.TabIndex = 3
@@ -179,7 +180,7 @@ Partial Class frmUsuario
         'txtCodigo
         '
         Me.txtCodigo.Location = New System.Drawing.Point(129, 28)
-        Me.txtCodigo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCodigo.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(205, 22)
         Me.txtCodigo.TabIndex = 1
@@ -197,21 +198,31 @@ Partial Class frmUsuario
         'btnGuardar
         '
         Me.btnGuardar.Location = New System.Drawing.Point(219, 346)
-        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(116, 33)
         Me.btnGuardar.TabIndex = 1
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
+        'btnEliminar
+        '
+        Me.btnEliminar.Location = New System.Drawing.Point(373, 371)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(75, 23)
+        Me.btnEliminar.TabIndex = 2
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = True
+        '
         'frmUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(545, 423)
+        Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmUsuario"
         Me.Text = "frmUsuario"
         Me.GroupBox1.ResumeLayout(False)
@@ -236,4 +247,5 @@ Partial Class frmUsuario
     Friend WithEvents txtCodigo As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents btnGuardar As Button
+    Friend WithEvents btnEliminar As Button
 End Class
