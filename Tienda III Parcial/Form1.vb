@@ -11,7 +11,6 @@ Public Class frmUsuario
         Return Regex.IsMatch(isCorreo, "^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$")
     End Function
 
-
     Private Sub limpiar()
         txtCodigo.Clear()
         txtNombre.Clear()
@@ -31,9 +30,8 @@ Public Class frmUsuario
             MessageBox.Show("Correo valido", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         End If
-
-
     End Sub
+
     Private Sub insertarUsuaurio()
         Dim idUsuario As Integer
         Dim nombre, apellido, userName, psw, correo, rol, estado As String

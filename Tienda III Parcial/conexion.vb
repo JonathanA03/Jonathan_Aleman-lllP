@@ -4,7 +4,6 @@ Imports System.Security.Cryptography
 
 Public Class conexion
     Public conexion As SqlConnection = New SqlConnection("Data Source= localhost\SQLEXPRESS;Initial Catalog=TiendaIIIP; Integrated Security=True")
-    'Private cmb As SqlCommandBuilder
     Public ds As DataSet = New DataSet()
     Public da As SqlDataAdapter
     Public cmb As SqlCommand
