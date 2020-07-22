@@ -1,15 +1,19 @@
 ﻿Imports System.Data.SqlClient
-Imports System.Text
 Imports System.Security.Cryptography
+Imports System.Text
 
 Public Class conexion
+
     Public conexion As SqlConnection = New SqlConnection("Data Source= localhost\SQLEXPRESS;Initial Catalog=TiendaIIIP; Integrated Security=True")
+    Private cmba As SqlCommandBuilder
     Public ds As DataSet = New DataSet()
     Public da As SqlDataAdapter
     Public cmb As SqlCommand
     Public dr As SqlDataReader
+    Private dv As New DataView
     Dim des As New TripleDESCryptoServiceProvider
     Dim MD5 As New MD5CryptoServiceProvider
+
 
     Function MD5Hash(ByVal value As String) As Byte()
         Return MD5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(value))
@@ -31,6 +35,14 @@ Public Class conexion
         Finally
             conexion.Close()
         End Try
+    End Sub
+
+    Public Sub Llenar(ByVal sql, ByVal tabla)
+        ds.Tables.Clear()
+        da = New SqlDataAdapter(sql, conexion)
+        cmba = New SqlCommandBuilder(da)
+        da.Fill(ds, tabla)
+        dv.Table = ds.Tables(0)
     End Sub
 
     Public Function insertarUsuario(idUsuario As Integer, nombre As String, apellido As String, userName As String,
@@ -57,12 +69,31 @@ Public Class conexion
         End Try
     End Function
 
-    'Cambiar el estado del usuario no lo elimina
+    Function busqueda(ByVal tabla, ByVal condicion) As DataTable
+        Try
+            conexion.Open()
+            Dim buscar As String = "select * from " + tabla + " where " + condicion
+            Dim cmd As New SqlCommand(buscar, conexion)
+            If cmd.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmd)
+                da.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+            conexion.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
     Public Function eliminarUsuario(idUsuario As Integer, rol As String)
         Try
             conexion.Open()
             cmb = New SqlCommand("eliminarUsuario", conexion)
-            cmb.CommandType = CommandType.StoredProcedure 'tambien podemos poner 4
+            cmb.CommandType = CommandType.StoredProcedure
             cmb.Parameters.AddWithValue("@idUsuario", idUsuario)
             cmb.Parameters.AddWithValue("@rol", rol)
             If cmb.ExecuteNonQuery <> 0 Then
@@ -73,8 +104,31 @@ Public Class conexion
         Catch ex As Exception
             MsgBox(ex.Message)
             Return False
-        Finally 'El finally cierra la conexion
+        Finally
             conexion.Close()
+        End Try
+    End Function
+
+
+    Public Function modificarUsuario(ID As Integer, nombre As String, apellido As String, username As String, psw As String, rol As String, correo As String)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("modificarUsuario", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@idUsuario", ID)
+            cmb.Parameters.AddWithValue("@nombre", nombre)
+            cmb.Parameters.AddWithValue("@apellido", apellido)
+            cmb.Parameters.AddWithValue("@userName", username)
+            cmb.Parameters.AddWithValue("@psw", Encrypt(psw, "abc"))
+            cmb.Parameters.AddWithValue("@rol", rol)
+            cmb.Parameters.AddWithValue("@correo", correo)
+            If cmb.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
         End Try
     End Function
 End Class
