@@ -68,9 +68,9 @@ Partial Class frmUsuario
         Me.GroupBox1.Controls.Add(Me.txtCodigo)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(13, 13)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(372, 268)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
@@ -81,7 +81,7 @@ Partial Class frmUsuario
         Me.cmbRol.FormattingEnabled = True
         Me.cmbRol.Items.AddRange(New Object() {"diseñador", "cajero"})
         Me.cmbRol.Location = New System.Drawing.Point(129, 192)
-        Me.cmbRol.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbRol.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbRol.Name = "cmbRol"
         Me.cmbRol.Size = New System.Drawing.Size(205, 24)
         Me.cmbRol.TabIndex = 13
@@ -98,8 +98,9 @@ Partial Class frmUsuario
         '
         'txtCorreo
         '
+        Me.txtCorreo.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
         Me.txtCorreo.Location = New System.Drawing.Point(129, 223)
-        Me.txtCorreo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCorreo.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCorreo.Name = "txtCorreo"
         Me.txtCorreo.Size = New System.Drawing.Size(205, 22)
         Me.txtCorreo.TabIndex = 11
@@ -117,7 +118,7 @@ Partial Class frmUsuario
         'txtPsw
         '
         Me.txtPsw.Location = New System.Drawing.Point(129, 156)
-        Me.txtPsw.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtPsw.Margin = New System.Windows.Forms.Padding(4)
         Me.txtPsw.Name = "txtPsw"
         Me.txtPsw.Size = New System.Drawing.Size(205, 22)
         Me.txtPsw.TabIndex = 9
@@ -135,7 +136,7 @@ Partial Class frmUsuario
         'txtUserName
         '
         Me.txtUserName.Location = New System.Drawing.Point(129, 124)
-        Me.txtUserName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtUserName.Margin = New System.Windows.Forms.Padding(4)
         Me.txtUserName.Name = "txtUserName"
         Me.txtUserName.Size = New System.Drawing.Size(205, 22)
         Me.txtUserName.TabIndex = 7
@@ -153,7 +154,7 @@ Partial Class frmUsuario
         'txtApellido
         '
         Me.txtApellido.Location = New System.Drawing.Point(129, 92)
-        Me.txtApellido.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtApellido.Margin = New System.Windows.Forms.Padding(4)
         Me.txtApellido.Name = "txtApellido"
         Me.txtApellido.Size = New System.Drawing.Size(205, 22)
         Me.txtApellido.TabIndex = 5
@@ -171,7 +172,7 @@ Partial Class frmUsuario
         'txtNombre
         '
         Me.txtNombre.Location = New System.Drawing.Point(129, 60)
-        Me.txtNombre.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtNombre.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(205, 22)
         Me.txtNombre.TabIndex = 3
@@ -189,7 +190,7 @@ Partial Class frmUsuario
         'txtCodigo
         '
         Me.txtCodigo.Location = New System.Drawing.Point(129, 28)
-        Me.txtCodigo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCodigo.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(205, 22)
         Me.txtCodigo.TabIndex = 1
@@ -207,7 +208,7 @@ Partial Class frmUsuario
         'btnGuardar
         '
         Me.btnGuardar.Location = New System.Drawing.Point(13, 289)
-        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(116, 33)
         Me.btnGuardar.TabIndex = 1
@@ -217,7 +218,7 @@ Partial Class frmUsuario
         'btnSalir
         '
         Me.btnSalir.Location = New System.Drawing.Point(960, 308)
-        Me.btnSalir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSalir.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(100, 33)
         Me.btnSalir.TabIndex = 2
@@ -227,7 +228,7 @@ Partial Class frmUsuario
         'btnNuevo
         '
         Me.btnNuevo.Location = New System.Drawing.Point(137, 289)
-        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(4)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(100, 33)
         Me.btnNuevo.TabIndex = 3
@@ -237,7 +238,7 @@ Partial Class frmUsuario
         'btnEliminar
         '
         Me.btnEliminar.Location = New System.Drawing.Point(13, 330)
-        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(116, 33)
         Me.btnEliminar.TabIndex = 4
@@ -248,7 +249,7 @@ Partial Class frmUsuario
         '
         Me.TABLA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.TABLA.Location = New System.Drawing.Point(408, 86)
-        Me.TABLA.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TABLA.Margin = New System.Windows.Forms.Padding(4)
         Me.TABLA.Name = "TABLA"
         Me.TABLA.RowHeadersWidth = 51
         Me.TABLA.Size = New System.Drawing.Size(652, 214)
@@ -257,7 +258,7 @@ Partial Class frmUsuario
         'btnModificar
         '
         Me.btnModificar.Location = New System.Drawing.Point(245, 289)
-        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(143, 33)
         Me.btnModificar.TabIndex = 6
@@ -267,7 +268,7 @@ Partial Class frmUsuario
         'txtbuscar
         '
         Me.txtbuscar.Location = New System.Drawing.Point(17, 25)
-        Me.txtbuscar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtbuscar.Margin = New System.Windows.Forms.Padding(4)
         Me.txtbuscar.Name = "txtbuscar"
         Me.txtbuscar.Size = New System.Drawing.Size(193, 22)
         Me.txtbuscar.TabIndex = 7
@@ -277,9 +278,9 @@ Partial Class frmUsuario
         Me.GroupBox2.Controls.Add(Me.btnBuscar)
         Me.GroupBox2.Controls.Add(Me.txtbuscar)
         Me.GroupBox2.Location = New System.Drawing.Point(408, 13)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Size = New System.Drawing.Size(306, 65)
         Me.GroupBox2.TabIndex = 8
         Me.GroupBox2.TabStop = False
@@ -288,7 +289,7 @@ Partial Class frmUsuario
         'btnBuscar
         '
         Me.btnBuscar.Location = New System.Drawing.Point(218, 19)
-        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(77, 31)
         Me.btnBuscar.TabIndex = 9
@@ -308,7 +309,7 @@ Partial Class frmUsuario
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmUsuario"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmUsuario"

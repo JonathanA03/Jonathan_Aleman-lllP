@@ -35,9 +35,7 @@ Public Class frmUsuario
             Llenar()
             limpiar()
             conexion.conexion.Close()
-
         End If
-
     End Sub
 
     Private Sub buscar()
@@ -62,10 +60,20 @@ Public Class frmUsuario
 
     Private Sub insertarUsuario()
         Dim idUsuario As Integer
-        Dim nombre, apellido, userName, psw, correo, rol, estado As String
+        Dim userName, psw, correo, rol, estado As String
+        Dim mayus, mayus1 As String
+
         idUsuario = txtCodigo.Text
-        nombre = txtNombre.Text
-        apellido = txtApellido.Text
+        mayus = txtNombre.Text
+        Dim nombre As String = StrConv(mayus, VbStrConv.ProperCase)
+
+        txtNombre.Text = nombre
+        'nombre = txtNombre.Text
+        mayus1 = txtApellido.Text
+        Dim apellido As String = StrConv(mayus1, VbStrConv.ProperCase)
+
+        txtApellido.Text = apellido
+        'apellido = txtApellido.Text
         userName = txtUserName.Text
         psw = txtPsw.Text
         correo = txtCorreo.Text
@@ -156,5 +164,15 @@ Public Class frmUsuario
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         buscar()
+    End Sub
+
+    Private Sub txtNombre_TextChanged(sender As Object, e As EventArgs) Handles txtNombre.TextChanged
+        'txtNombre.Text = StrConv(txtNombre.Text, vbProperCase)
+        'txtNombre.SelectionStart = Len(txtNombre.Text)
+    End Sub
+
+    Private Sub txtApellido_TextChanged(sender As Object, e As EventArgs) Handles txtApellido.TextChanged
+        'txtApellido.Text = StrConv(txtApellido.Text, vbProperCase)
+        'txtApellido.SelectionStart = Len(txtApellido.Text)
     End Sub
 End Class
