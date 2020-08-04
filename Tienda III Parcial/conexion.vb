@@ -1,9 +1,8 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data
+Imports System.Data.SqlClient
 Imports System.Security.Cryptography
 Imports System.Text
-
 Public Class conexion
-
     Public conexion As SqlConnection = New SqlConnection("Data Source= localhost\SQLEXPRESS;Initial Catalog=TiendaIIIP; Integrated Security=True")
     Private cmba As SqlCommandBuilder
     Public ds As DataSet = New DataSet()
@@ -13,7 +12,8 @@ Public Class conexion
     Private dv As New DataView
     Dim des As New TripleDESCryptoServiceProvider
     Dim MD5 As New MD5CryptoServiceProvider
-
+    Public cmd As New SqlCommand
+    Public comand As SqlCommand
 
     Function MD5Hash(ByVal value As String) As Byte()
         Return MD5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(value))
@@ -109,7 +109,6 @@ Public Class conexion
         End Try
     End Function
 
-
     Public Function modificarUsuario(ID As Integer, nombre As String, apellido As String, username As String, psw As String, rol As String, correo As String)
         Try
             conexion.Open()
@@ -129,6 +128,45 @@ Public Class conexion
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
+        End Try
+    End Function
+
+    Public Function consultarPSW(correo As String)
+        Try
+            conexion.Open()
+            cmd = New SqlCommand("buscarUsuarioPorCorreo", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@correo", correo)
+            If cmd.ExecuteNonQuery <> 0 Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function validarUsuario(userName As String, psw As String)
+        Try
+            conexion.Open()
+            comand = New SqlCommand("validarUsuario", conexion)
+            comand.CommandType = CommandType.StoredProcedure
+            comand.Parameters.AddWithValue("@userName", userName)
+            comand.Parameters.AddWithValue("@psw", psw)
+            If comand.ExecuteNonQuery <> 0 Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
         End Try
     End Function
 End Class
